@@ -17,8 +17,6 @@ class OrderRepoImpl @Inject constructor(
 ):OrderRepo {
 
     override fun sendOrder(order: Order) {
-        val strTimeStamp=SimpleDateFormat("yyyy.MM.dd HH:mm:ss").format(Date())
-        val ref = "${order.phoneNumber}_$strTimeStamp"
         firebaseUtils.dbRefence.push().setValue(order)
     }
 

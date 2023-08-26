@@ -20,4 +20,5 @@ data class OrderDbModel(
     @ColumnInfo(name = "title") val title: String,
     @ColumnInfo(name = "total_price") val totalPrice: String,
     @ColumnInfo(name = "delivery_cost") var deliveryCost:Int,
+    @ColumnInfo(name = "date") var date:String,
 )

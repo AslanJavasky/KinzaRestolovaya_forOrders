@@ -18,7 +18,8 @@ class OrderMapper @Inject constructor(
         title = order.title,
         phoneNumber = order.phoneNumber,
         totalPrice = order.totalPrice,
-        deliveryCost = order.deliveryCost
+        deliveryCost = order.deliveryCost,
+        date = order.date
     )
 
     fun mapDbModelToItem(orderDbModel: OrderDbModel) = Order(
@@ -32,7 +33,8 @@ class OrderMapper @Inject constructor(
         title = orderDbModel.title,
         phoneNumber = orderDbModel.phoneNumber,
         totalPrice = orderDbModel.totalPrice,
-        deliveryCost = orderDbModel.deliveryCost
+        deliveryCost = orderDbModel.deliveryCost,
+        date = orderDbModel.date
     )
 
 }

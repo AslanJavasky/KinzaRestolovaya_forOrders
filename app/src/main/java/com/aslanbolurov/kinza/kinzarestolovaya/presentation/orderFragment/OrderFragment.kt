@@ -85,7 +85,8 @@ class OrderFragment : Fragment(), AdapterView.OnItemSelectedListener {
 
                     sendOrderToFirebaseDb()
                 }
-                findNavController().navigate(R.id.action_orderFragment_to_splashFragment)
+                findNavController().navigate(
+                    R.id.action_orderFragment_to_splashFragment)
             } else {
                 Toast.makeText(App.INSTANCE, "Заполните все поля", Toast.LENGTH_LONG).show()
             }
