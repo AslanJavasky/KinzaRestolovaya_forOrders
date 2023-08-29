@@ -32,13 +32,13 @@ class Converters {
 
     //implementation("com.google.code.gson:gson:2.9.0")
     @TypeConverter
-    fun convertDishesToString(list: List<Map<String, Int>>): String {
-        return Gson().toJson(list)
+    fun convertDishesToString(map: Map<String, Int>): String {
+        return Gson().toJson(map)
     }
 
     @TypeConverter
-    fun convertDishesFromString(str: String): List<Map<String, Int>> {
-        val myType = object : TypeToken<List<Map<String, Int>>>() {}.type
+    fun convertDishesFromString(str: String): Map<String, Int> {
+        val myType = object : TypeToken<Map<String, Int>>() {}.type
         return Gson().fromJson(str, myType)
     }
 }

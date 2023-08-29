@@ -10,7 +10,7 @@ import java.util.UUID
 data class OrderDbModel(
     @PrimaryKey
     @ColumnInfo(name = "id") val id: String = UUID.randomUUID().toString(),
-    @ColumnInfo(name = "dish_ids") val dishes: List<Map<String,Int>>,
+    @ColumnInfo(name = "dish_ids") val dishes: Map<String,Int>,
     @ColumnInfo(name = "town") val town: String,
     @ColumnInfo(name = "street") val street: String,
     @ColumnInfo(name = "house_number") val houseNumber: String,
