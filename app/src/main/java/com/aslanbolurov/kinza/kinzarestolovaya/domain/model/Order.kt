@@ -5,7 +5,7 @@ import java.util.Date
 data class Order(
 
     var id: String,
-    var dishes: List<Map<String,Int>>,//list of dish <Name, Cnt>
+    var dishes: Map<String,Int>,///Map of dish <Name, Cnt>
     var town: String,
     var street: String,
     var houseNumber: String,

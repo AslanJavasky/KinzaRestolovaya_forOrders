@@ -113,7 +113,7 @@ class OrderViewModel @Inject constructor(
     }
 
     private fun calculateDate() {
-        _order.value.date=
+        _order.value.date =
             SimpleDateFormat(
                 "yyyy.MM.dd HH:mm:ss",
                 Locale.getDefault()
@@ -132,22 +132,19 @@ class OrderViewModel @Inject constructor(
     }
 
     private fun saveAllDishesToOrder() {
-        val maps = mutableListOf<MutableMap<String, Int>>()
-        DB_DISHES_LIST.forEachIndexed { index, element ->
-            maps.add(
-                index, mutableMapOf(deleteUnsupportSymbols(element.name) to element.cnt))
-        }
-        _order.value.dishes = maps
+        _order.value.dishes =
+            DB_DISHES_LIST.map { it.name to it.cnt }.toMap()
+
     }
 
-    private fun deleteUnsupportSymbols(str:String):String{
+    private fun deleteUnsupportSymbols(str: String): String {
         return str
-            .replace("/","")
-            .replace(".","")
-            .replace("#","")
-            .replace("$","")
-            .replace("[","")
-            .replace("]","")
+            .replace("/", "")
+            .replace(".", "")
+            .replace("#", "")
+            .replace("$", "")
+            .replace("[", "")
+            .replace("]", "")
     }
 
     private fun clearOrderFlow() {
@@ -157,7 +154,7 @@ class OrderViewModel @Inject constructor(
 
     private fun getEmptyOrder() = Order(
         UUID.randomUUID().toString(),
-        emptyList(),
+        emptyMap(),
         "",
         "",
         "",
@@ -168,7 +165,7 @@ class OrderViewModel @Inject constructor(
         "",
         0,
         ""
-        )
+    )
 
 }
 
